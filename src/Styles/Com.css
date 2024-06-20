@@ -1,0 +1,160 @@
+.container {
+	background-color: #fff;
+	color: grey;
+	padding: 20px;
+	width: 300px;
+	border-radius: 10px;
+	position: absolute;
+	right: 10%;
+	align-items: right;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.5%;
+}
+h2{color:black;}
+.forgot-password{
+	color:#4285F4;
+	cursor: pointer;
+	
+	position: absolute;
+	right:0;
+}
+.form-content {
+	display: flex;
+	flex-direction: column;
+	align-items: right;
+}
+
+.group {
+	margin-bottom: 10px;
+
+}
+.label {
+
+	margin-bottom: 5px;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.5%;
+}
+
+.input {
+	width: 100%;
+	padding: 7px;
+margin-bottom: 5px;
+
+	border-color: rgb(180, 175, 175);
+	border-radius: 5px;
+}
+.googbutton{
+width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	
+}
+.button {
+	width: 108%;
+	padding: 10px;
+	background-color: black;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.bbutton {
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	color: grey;
+	border-color: #999;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.or-separator {
+	margin: 0 20px;
+	font-size: 16px;
+	color: #999;
+	display: inline-block;
+	position: relative;
+}
+
+.or-separator::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 1px;
+	background-color: #ccc;
+}
+
+.container {
+	text-align: left;
+}
+
+
+.line-container {
+	text-align: center;
+}
+
+.line {
+	display: inline-block;
+	width: 40%;
+	border-top: 1px solid #ccc;
+}
+
+.or {
+	margin: 0 10px;
+}
+.button:hover {
+	background-color: grey;
+}
+
+.foot-lnk {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.foot-lnk span {
+	color: #4CAF50;
+	cursor: pointer;
+}
+.social-login-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.social-login-button {
+	background-color: #fff;
+	border: none;
+	padding: 1px 2px;
+	font-size: 3px;
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+.google {
+	background-color: #fff;
+	color: #4285F4;
+}
+
+.facebook {
+	background-color: #fff;
+	color: #4267B2;
+}
+
+.or-separator {
+	margin: 0 10px;
+	font-size: 16px;
+	color: #999;
+}
+.form-content {
+	margin-top: 20px;
+}
+.foot-lnk span:hover {
+	color: black;
+}

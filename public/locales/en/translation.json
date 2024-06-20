@@ -1,0 +1,12 @@
+{
+    "welcome":"welcome to website",
+    "home":"Home",
+    "LOGIN": "Log In",
+    "Username":"Username",
+    "password":"Password",
+    "Repeatpassword":"Repeat Password",
+    "Email":"Email address",
+    "Dont have an account?":"Don't have an account?",
+    "Sign Up":"Sign Up",
+    "Already a member?":"Already a member?"
+}

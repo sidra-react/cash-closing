@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import LanguageOption from './Components/LanguageOption';
 function App() {
+  const { t } = useTranslation();
+
+  const handleChangeLanguage = (e) => {
+    i18next.changeLanguage(e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <LanguageOption onChange={(e) => handleChangeLanguage(e)} />
+      <br/>
+
+         <a href='/sign'>{t('LOGIN')}</a>
+         <br/>
+
+         <a href='/home'>{t('home')}</a>
+         <br/>
+        
+
     </div>
+    
   );
 }
 
