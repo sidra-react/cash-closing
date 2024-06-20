@@ -4,9 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import '../Styles/Com.css';
 import LanguageOption from './LanguageOption';
-
-
-
+import 'font-awesome/css/font-awesome.min.css';
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
+import logo from '../Styles/head2.png';
+import sidepic from '../Styles/sidepic.JPG';
 const Signup = () => {
   const history = useNavigate();
   const [resetToken, setResetToken] = useState('');
@@ -17,17 +19,15 @@ const Signup = () => {
   const [tab, setTab] = useState("sign-up"); // Default tab
   const [code, setCode] = useState(''); // 4-digit code
   const [confirmationSent, setConfirmationSent] = useState(false);
- const [codeValue, setCodeValue] = useState('');
+  const [codeValue, setCodeValue] = useState('');
   const { t } = useTranslation();
 
   const handleConfirmEmail = (e) => {
-  e.preventDefault();
-  setTab("reset-password"); // Set the tab to "reset-password"
-  // TO DO: Send a request to your backend to send the code to the user's email
-  console.log('Confirm email code:', code);
-};
-
-
+    e.preventDefault();
+    setTab("reset-password"); // Set the tab to "reset-password"
+    // TO DO: Send a request to your backend to send the code to the user's email
+    console.log('Confirm email code:', code);
+  };
 
   async function submit(e) {
     e.preventDefault();
@@ -49,14 +49,14 @@ const Signup = () => {
       if (response.data === "exist" && tab === "sign-in") {
         console.log("data has logged", username);
         alert("data has logged", username)
-        history("/profile/" + username, { state: { id: username } });
+        history("/home/" + username, { state: { id: username } });
       } else if (response.data === "notexist" && tab === "sign-in") {
         alert("User has not signed up");
       } else if (response.data === "exist" && tab === "sign-up") {
         alert("User already exists");
-         } else if (response.data === "success" && tab === "sign-up") {
+      } else if (response.data === "success" && tab === "sign-up") {
         alert("User created");
-        history("/nav", { state: { id: username, email1: email } });
+        history("/home", { state: { id: username, email1: email } });
       }
     } catch (error) {
       alert("Wrong details");
@@ -65,15 +65,24 @@ const Signup = () => {
   }
 
   return (
+    <div className="containerr">
+        <div className="side">            <img src={sidepic} className="side-image" /> 
+</div>
+
     <div className="container">
-      <button className="bbutton">
-        Register with Google
-      </button>
-      <br />
-      <br />
-      <button className="bbutton">
-        Register with Facebook
-      </button>
+    
+     <img src={logo} className="heading-image" /> 
+       <h1>{t('WelcometoSaveNum')}SaveNum</h1>
+      <p>&nbsp;&nbsp;{t('Registernowandstartyouradventure')}</p>
+        <button className="bbutton">
+   
+  <FcGoogle /> &nbsp;&nbsp;Register with Google
+</button>
+<br />
+<br />
+<button className="bbutton">
+<FaFacebook /> &nbsp;Register with Facebook
+</button>
       <br />
       <br />
       <div className="line-container">
@@ -81,6 +90,7 @@ const Signup = () => {
         <span className="or">or</span>
         <span className="line"></span>
       </div>
+      
       <form onSubmit={submit}>
         {tab === "sign-in" ? (
           <div className="form-content">
@@ -135,7 +145,7 @@ const Signup = () => {
             </div>
             <p className="foot-lnk">{t('Already a member?')} <span onClick={() => setTab("sign-in")}>{t('LOGIN')}</span></p>
           </div>
-        ) : tab === "forgot-password" ? (
+          ) : tab === "forgot-password" ? (
   <div className="form-content">
     <h2>Forgot Password</h2>
     <p>Enter the email address you used when joined and we’ll send reset instructions to reset your password.</p>
@@ -150,31 +160,32 @@ const Signup = () => {
         Reset Password
       </button>
     </div>
-    tab === "reset-password" ? (
-      <div className="form-content">
-        <h2>Reset Password</h2>
-        <p>Enter a new password for your account.</p>
-        <div className="group">
-          <label htmlFor="password" className="label">
-            New Password
-          </label>
-          <input id="password" type="password" className="input" onChange={(e) => setPassword(e.target.value)} />
-        </div>
-        <div className="group">
-          <label htmlFor="confirm-password" className="label">
-            Confirm Password
-          </label>
-          <input id="confirm-password" type="password" className="input" onChange={(e) => setConfirmPassword(e.target.value)} />
-        </div>
-        <div className="group">
-          <button type="submit" className="button">
-            Reset Password
-          </button>
-        </div>
-      </div>
-    ) }
- 
+  </div>
+) : tab === "reset-password" ? (
+  <div className="form-content">
+    <h2>Reset Password</h2>
+    <p>Enter a new password for your account.</p>
+    <div className="group">
+      <label htmlFor="password" className="label">
+        New Password
+      </label>
+      <input id="password" type="password" className="input" onChange={(e) => setPassword(e.target.value)} />
+    </div>
+    <div className="group">
+      <label htmlFor="confirm-password" className="label">
+        Confirm Password
+      </label>
+      <input id="confirm-password" type="password" className="input" onChange={(e) => setConfirmPassword(e.target.value)} />
+    </div>
+    <div className="group">
+      <button type="submit" className="button">
+        Reset Password
+      </button>
+    </div>
+  </div>
+) : null}
       </form>
+    </div>
     </div>
   );
 };

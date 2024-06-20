@@ -12,6 +12,7 @@
     "axios": "^1.6.8",
     "cors": "^2.8.5",
     "crypto-browserify": "^3.12.0",
+    "font-awesome": "^4.7.0",
     "i18next": "^23.11.3",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-http-backend": "^2.5.1",

@@ -6,7 +6,7 @@
 	border-radius: 10px;
 	position: absolute;
 	right: 10%;
-	align-items: right;
+	align-items: center;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 500;
 		font-size: 14px;
@@ -14,6 +14,9 @@
 		letter-spacing: 0.5%;
 }
 h2{color:black;}
+h1{
+		color: black;
+	}
 .forgot-password{
 	color:#4285F4;
 	cursor: pointer;
@@ -25,6 +28,11 @@ h2{color:black;}
 	display: flex;
 	flex-direction: column;
 	align-items: right;
+	padding: 20px;
+	position: relative;
+	top:0;
+	left:0;
+
 }
 
 .group {
@@ -117,9 +125,15 @@ width: 20px;
 	text-align: center;
 	margin-top: 20px;
 }
-
+.containerr {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
 .foot-lnk span {
-	color: #4CAF50;
+	color: black;
+	text-underline-offset: 1;
 	cursor: pointer;
 }
 .social-login-container {
@@ -157,4 +171,33 @@ width: 20px;
 }
 .foot-lnk span:hover {
 	color: black;
+}
+.heading-image {
+	width:200%;
+	width: 60%;
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left:10%;
+
+	top:0;
+}
+.side-image {
+	width: 50%;
+		height: 110%;
+	position: relative;
+	
+
+	left: 0;
+
+	top: 0;
+}
+.side {
+		padding: 30px;
+		position: relative;
+		top:5%;
+		left:0%;
+	width: 400%;
+	height: 500%;
+	
 }
