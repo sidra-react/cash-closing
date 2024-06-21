@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import LanguageOption from './Components/LanguageOption';
+import Navbar from './Components/Navbar';
 function App() {
   const { t } = useTranslation();
 
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+       <Navbar/>
        <LanguageOption onChange={(e) => handleChangeLanguage(e)} />
       <br/>
 
@@ -19,7 +21,7 @@ function App() {
 
          <a href='/home'>{t('home')}</a>
          <br/>
-        
+         
 
     </div>
     

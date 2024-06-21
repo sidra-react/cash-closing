@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import Navbar from './Navbar';
 
 
 function Homee() {
@@ -15,6 +16,7 @@ function Homee() {
         <h1>
      
         {t('welcome')} {t('home')}
+      
       </h1>
     </>
   );

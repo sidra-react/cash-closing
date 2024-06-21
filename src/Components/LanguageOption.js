@@ -2,7 +2,7 @@ const LanguageOption = ({ onChange }) => {
     return (
       <div style={{
   position: 'absolute',
-  top: 0,
+  top: 500,
   right:0,
   marginTop: '50px'
 }}>

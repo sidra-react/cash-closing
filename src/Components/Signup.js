@@ -66,14 +66,20 @@ const Signup = () => {
 
   return (
     <div className="containerr">
-        <div className="side">            <img src={sidepic} className="side-image" /> 
+        <div className="side">     
+                 <img src={sidepic} className="side-image" /> 
 </div>
 
     <div className="container">
     
-     <img src={logo} className="heading-image" /> 
-       <h1>{t('WelcometoSaveNum')}SaveNum</h1>
-      <p>&nbsp;&nbsp;{t('Registernowandstartyouradventure')}</p>
+          
+      <form onSubmit={submit}>
+        {tab === "sign-in" ? (
+          
+          <div className="form-content">
+             <img src={logo} className="heading-image" /> 
+       <h1>&nbsp;&nbsp;&nbsp;&nbsp;Welcome Back!</h1>
+      <p>&nbsp;&nbsp;Welcome back, please enter your details.</p>
         <button className="bbutton">
    
   <FcGoogle /> &nbsp;&nbsp;Register with Google
@@ -90,10 +96,7 @@ const Signup = () => {
         <span className="or">or</span>
         <span className="line"></span>
       </div>
-      
-      <form onSubmit={submit}>
-        {tab === "sign-in" ? (
-          <div className="form-content">
+
             <h2>{t('LOGIN')}</h2>
             <div className="group">
               <label htmlFor="user" className="label">
@@ -115,6 +118,25 @@ const Signup = () => {
           </div>
         ) : tab === "sign-up" ? (
           <div className="form-content">
+              <img src={logo} className="heading-image" /> 
+       <h1>{t('WelcometoSaveNum')}</h1>
+      <p>&nbsp;&nbsp;{t('Registernowandstartyouradventure')}</p>
+        <button className="bbutton">
+   
+  <FcGoogle /> &nbsp;&nbsp;Register with Google
+</button>
+<br />
+<br />
+<button className="bbutton">
+<FaFacebook /> &nbsp;Register with Facebook
+</button>
+      <br />
+      <br />
+      <div className="line-container">
+        <span className="line"></span>
+        <span className="or">or</span>
+        <span className="line"></span>
+      </div>
             <h2>{t('Sign Up')}</h2>
             <div className="group">
               <label htmlFor="user" className="label">
@@ -160,6 +182,9 @@ const Signup = () => {
         Reset Password
       </button>
     </div>
+                <p className="foot-lnk">Back to log in page? <span onClick={() => setTab("sign-in")}>{t('LOGIN')}</span></p>
+    
+   
   </div>
 ) : tab === "reset-password" ? (
   <div className="form-content">
@@ -182,6 +207,8 @@ const Signup = () => {
         Reset Password
       </button>
     </div>
+    <p className="foot-lnk">{t('Dont have an account?')} <span onClick={() => setTab("sign-up")}>Register</span></p>
+   
   </div>
 ) : null}
       </form>
