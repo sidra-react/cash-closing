@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import store from './Redux/store'; 
 
 import './i18n';
+import Learntouse from './Pages/Learntouse';
 import Profile from './Components/Profile';
 import Signup from './Components/Signup';
 import Homee from './Components/Homee';
@@ -18,7 +19,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <Routes>
       
-        
+          <Route path="/guide" element={<Learntouse />} />
           <Route path="/home" element={<Homee />} />
           <Route path="/sign" element={<Signup />} />
           <Route path="/profile/:username" element={<Profile />}  />

@@ -89,7 +89,7 @@ const Navbar = () => {
                             <i className="fs-4 bi-table"></i> <span className="ms-1 d-none d-sm-inline text-whit"><BiSolidUserPin />&nbsp;Contact Us</span></a>
                     </li>
                     <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+                        <a href='/guide'  className="nav-link px-0 align-middle ">
                             <i className="fs-4 bi-bootstrap"></i> <span className="ms-1 d-none d-sm-inline text-whit"><FaUserGraduate />&nbsp;Learn to use</span></a>
                        
                     </li>
