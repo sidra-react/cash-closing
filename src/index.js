@@ -4,8 +4,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store'; 
-
+import Aboutus from './Pages/Aboutus';
 import './i18n';
+import Contact from './Pages/Contact';
 import Learntouse from './Pages/Learntouse';
 import Profile from './Components/Profile';
 import Signup from './Components/Signup';
@@ -18,7 +19,8 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}> 
       <BrowserRouter>
         <Routes>
-      
+          <Route path="/about" element={<Aboutus />} />
+                <Route path="/contact" element={<Contact />} />
           <Route path="/guide" element={<Learntouse />} />
           <Route path="/home" element={<Homee />} />
           <Route path="/sign" element={<Signup />} />

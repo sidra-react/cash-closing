@@ -14,7 +14,8 @@ const Signup = () => {
   const [resetToken, setResetToken] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [username, setName] = useState('');
+   const [name, setName] = useState('');
+  const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
   const [tab, setTab] = useState("sign-up"); // Default tab
   const [code, setCode] = useState(''); // 4-digit code
@@ -66,17 +67,18 @@ const Signup = () => {
 
   return (
     <div className="containerr">
+          <a href='/guide'>{t('home')}</a>
         <div className="side">     
                  <img src={sidepic} className="side-image" /> 
 </div>
 
-    <div className="container">
+    <div className="containerc1">
     
           
       <form onSubmit={submit}>
         {tab === "sign-in" ? (
           
-          <div className="form-content">
+          <div className=" signbox">
              <img src={logo} className="heading-image" /> 
        <h1>&nbsp;&nbsp;&nbsp;&nbsp;Welcome Back!</h1>
       <p>&nbsp;&nbsp;Welcome back, please enter your details.</p>
@@ -102,7 +104,7 @@ const Signup = () => {
               <label htmlFor="user" className="label">
                 {t('Username')}
               </label>
-              <input id="user" type="text" className="input" onChange={(e) => setName(e.target.value)} />
+              <input id="user" type="text" className="input" onChange={(e) => setusername(e.target.value)} />
             </div>
             <div className="group">
               <label htmlFor="pass" className="label">
@@ -139,12 +141,18 @@ const Signup = () => {
       </div>
             <h2>{t('Sign Up')}</h2>
             <div className="group">
-              <label htmlFor="user" className="label">
-                {t('Username')}
-              </label>
-              <input id="user" type="text" className="input" onChange={(e) => setName(e.target.value)} />
-            </div>
-            <div className="group">
+  
+  <div className="input-container">
+    <div>
+      <label htmlFor="user" className="label">{t('Username')}</label>
+      <input id="user" type="text" className="input" style={{ width: '100%' }} onChange={(e) => setusername(e.target.value)} />
+    </div>
+    <div>
+      <label htmlFor="name" className="label">{t('Name')}</label>
+      <input id="name" type="text" className="input" style={{ width: '110%' }} onChange={(e) => setName(e.target.value)} />
+    </div>
+  </div>
+</div>         <div className="group">
               <label htmlFor="pass-sign-up" className="label">
                 {t('password')}
               </label>

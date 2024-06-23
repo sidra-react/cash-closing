@@ -6,7 +6,9 @@ padding:7px;
     width: 14%;
     height: 10%;
 }
-
+body{
+    background-color: #ddd !important;
+}
 .linee {
     border-top: 1px solid #616161;
     width: 15%;
@@ -17,7 +19,8 @@ top:10%;
 }
 .signoutposi{
     position: absolute;
-    bottom: 4px;
+    top: 160%;
+  
     left:4%;
 }
 .line2 {
@@ -30,8 +33,12 @@ top:10%;
 }
 .bg {
     background-color: #1D1F2C !important;
+   
+ 
 }
-
+.bg2{
+    height: 150vh;
+}
 .text-whit {
     color: white !important;
 }
@@ -52,11 +59,11 @@ top:10%;
     text-decoration: none;
 }
 .searchh{
-    background-color: #fff;
+    background-color: #ddd;
 }
         .searchh:hover {
-            background-color: #fff;
-            border: 1px solid #ced4da;
+            background-color: #ddd;
+            border: 1px solid #c1c5c9;
             box-shadow: none;
         }
 .desipos {
@@ -79,8 +86,8 @@ top:10%;
     width: 60vw !important;
     /* Full screen width */
     height: 250%;
-    background-color: white;
-    border-color: white;
+    background-color: #ddd;
+    border-color: #ddd;
 }
 .badge {
     font-size: 10px;
@@ -92,3 +99,4 @@ top:10%;
     background-color: rgb(75, 150, 219);
     color: white;
 }
+    

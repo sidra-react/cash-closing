@@ -2,7 +2,9 @@
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import LanguageOption from './Components/LanguageOption';
-import Navbar from './Components/Navbar';
+import Aboutus from './Pages/Aboutus';
+import Navbaroutflow from './Components/Navbaroutflow';
+import { BrowserRouter as Router } from 'react-router-dom';
 function App() {
   const { t } = useTranslation();
 
@@ -12,16 +14,11 @@ function App() {
 
   return (
     <div>
-       <Navbar/>
-       <LanguageOption onChange={(e) => handleChangeLanguage(e)} />
-      <br/>
+     <Router>
+       <LanguageOption onChange={handleChangeLanguage} />
+<Aboutus/>
 
-         <a href='/sign'>{t('LOGIN')}</a>
-         <br/>
-
-         <a href='/home'>{t('home')}</a>
-         <br/>
-         
+         </Router>
 
     </div>
     

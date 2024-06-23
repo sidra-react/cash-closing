@@ -1,0 +1,132 @@
+.triangle-right {
+    width: 1px;
+    height: 1px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgb(109, 103, 103);
+    position: absolute;
+    top: 156px;
+    left: 343px;
+}
+.bodycontact{
+    background-color: #ddd;
+}
+.lerntouseposit {
+    position: absolute;
+    top: 15%;
+    left: 18%;
+}
+.dashboardtext {
+    position: absolute;
+    top: 22%;
+    left: 55%;
+    color: rgb(65, 65, 238);
+}
+.cancel-button {
+    background-color: #fff;
+    /* White background */
+    border: 1px solid #ddd;
+    /* Grey border */
+    color: #333;
+    /* Black text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #333;
+    /* Black background */
+    color: #fff;
+    /* White text */
+    position: absolute;
+    right:20px;
+    bottom:1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lerntousetxt2 {
+    position: absolute;
+    top: 151px;
+    left: 359px;
+
+    color: rgb(109, 103, 103);
+}
+.contactbox {
+    position: absolute;
+    padding:100px;
+        width: 80%;
+        height:90%;
+        top:27%;
+        left: 18%;
+    max-width: 100%;
+    /* Set a max width for the contact box */
+    margin: 10px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 10px;
+    /* Set the left position to 0 to align with the left edge of the screen */
+ 
+    /* Center the contact box */
+}
+
+.formroww {
+
+    margin-bottom: 5px;
+    /* Add some space between form rows */
+}
+
+.full-width {
+    width: 100%;
+    /* Make the input fields full width */
+    box-sizing: border-box;
+    /* Include padding and border in the width calculation */
+    padding: 10px;
+    /* Add some padding to the input fields */
+}
+
+label.full-width {
+    display: block;
+    /* Make the labels full width and block level */
+}
+
+input.full-width,
+textarea.full-width {
+    border-radius: 5px;
+    height: 40px;
+    /* Set a height for the input fields */
+    font-size: 16px;
+    /* Set a font size for the input fields */
+}
+
+textarea.full-width {
+    height: 100px;
+    /* Set a height for the textarea */
+}
+input.full-width:hover,
+textarea.full-width:hover {
+    border-color:rgb(109, 103, 103) !important;
+    /* Grey border on hover */
+}
+
+input.full-width:focus {
+    border-color: rgb(109, 103, 103);
+    /* Keep the border grey on focus */
+    box-shadow: none;
+    /* Remove the default blue glow */
+    outline: none;
+    /* Remove the default black border */
+}
+
+textarea.full-width:focus {
+    border-color: rgb(109, 103, 103);
+    /* Keep the border grey on focus */
+    box-shadow: none;
+    /* Remove the default blue glow */
+    outline: none;
+    /* Remove the default black border */
+}

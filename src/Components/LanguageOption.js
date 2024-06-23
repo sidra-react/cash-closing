@@ -2,8 +2,8 @@ const LanguageOption = ({ onChange }) => {
     return (
       <div style={{
   position: 'absolute',
-  top: 500,
-  right:0,
+  bottom: 0 ,
+  left:0,
   marginTop: '50px'
 }}>
   <select onChange={onChange}>

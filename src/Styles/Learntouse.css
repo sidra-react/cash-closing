@@ -1,3 +1,19 @@
+.bodyguide {
+  
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bodyguide2{
+    
+    background-color: #ddd;
+        height:173vh;
+}
 .lerntouseposit{
     position:absolute;
     top:15%;
@@ -35,14 +51,20 @@ position: absolute;
 
 .positvid {
     position: absolute;
-top: 20%;
+  
+top: 25%;
 
-    left: 17%;
+    left: 14%;
+    right:5%;
+    border-radius: 10px;
 }
 .video-wrapper {
+    border-radius: 10px;
     position: relative;
     margin: 70px;
-    margin-bottom: 10px;
+
+    margin-bottom: 0.5px;
+   
     /* add margin to create spacing between videos */
 }
 
@@ -71,8 +93,8 @@ video::cue {
     /* show play arrow on hover */
 }
 .videodiv {
-    width: 180%;
-   
+    width: 125%;
+    border-radius: 10px;
     /* make the video div fu width */
     padding-top: 120%;
     /* maintain the aspect ratio */
@@ -81,12 +103,13 @@ video::cue {
 }
 
 .videodiv video {
+    border-radius: 5px;
     position: absolute;
     top: 0;
         background-color: rgba(0, 0, 0, 0.5);
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
 }
 .videodiv video:not(.playing) {
