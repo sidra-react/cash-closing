@@ -9,8 +9,16 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import logo from '../Styles/head2.png';
 import sidepic from '../Styles/sidepic.JPG';
+///
+
+
 const Signup = () => {
+
   const history = useNavigate();
+  const [password2, setPassword2] = useState('');
+const [confirmPassword2, setConfirmPassword2] = useState('');
+const [error, setError] = useState('');
+const [success, setSuccess] = useState(false);
   const [resetToken, setResetToken] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -19,16 +27,83 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [tab, setTab] = useState("sign-up"); // Default tab
   const [code, setCode] = useState(''); // 4-digit code
+    const [flag, setflag] = useState('false'); // 4-digit code
+
   const [confirmationSent, setConfirmationSent] = useState(false);
   const [codeValue, setCodeValue] = useState('');
   const { t } = useTranslation();
+const handleConfirmEmail = async (e) => {
+  e.preventDefault();
+  console.log(email)
+  try {
+    const response = await axios.post('http://localhost:8000/check-email', {
+      email
+    });
+    const { data } = response;
 
-  const handleConfirmEmail = (e) => {
-    e.preventDefault();
-    setTab("reset-password"); // Set the tab to "reset-password"
-    // TO DO: Send a request to your backend to send the code to the user's email
-    console.log('Confirm email code:', code);
-  };
+     console.log(data.message)
+    const { success, message, error } = response.data;
+    if (success) {
+      if (message === 'Email found') {
+        setflag(true)
+  
+      } else {
+      
+        console.log('Email not found');
+      }
+    } else {
+      console.error(error);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+if(flag===true){
+alert("Email found")
+   setflag(false)
+
+      setTab("reset-password")
+}
+else{
+  alert("Email not found")
+}
+  // const code = Math.floor(Math.random() * 9000) + 1000;
+
+  // const emaill = 'sidra.noor.2802002@gmail.com'; // Assuming 'email' is the user's email address
+
+  // try {
+  //   const response = await axios.post('http://localhost:8000/send-pin', {
+  //     to: emaill,
+  //     pin: code
+  //   });
+  //   const { success, message, error } = response.data;
+  //   if (success) {
+  //     console.log(message);
+  //   } else {
+  //     console.error(error);
+  //   }
+  // } catch (error) {
+  //   console.error(error);
+  // }
+};
+const handleResetPassword = async () => {
+  console.log(password2,confirmPassword2)
+  try {
+    const response = await axios.post('http://localhost:8000/api/reset-password', {
+      email,
+      password2,
+      confirmPassword2
+    });
+
+    if (response.data.success) {
+      setSuccess(true);
+      setError('');
+    } else {
+      setError(response.data.message);
+    }
+  } catch (error) {
+    setError(error.message);
+  }
+};
 
   async function submit(e) {
     e.preventDefault();
@@ -42,6 +117,7 @@ const Signup = () => {
         username, 
         email,
         password,
+        name,
         action
       });
 
@@ -60,7 +136,7 @@ const Signup = () => {
         history("/home", { state: { id: username, email1: email } });
       }
     } catch (error) {
-      alert("Wrong details");
+      alert("Data not found");
       console.error(error);
     }
   }
@@ -168,8 +244,10 @@ const Signup = () => {
               <label htmlFor="email" className="label">
                 {t('Email')}
               </label>
-              <input id="email" type="text" className="input" onChange={(e) => setEmail(e.target.value)} />
-            </div>
+            <input id="email" type="email" className="input" 
+         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+         onChange={(e) => setEmail(e.target.value)} 
+         required />    </div>
             <div className="group">
               <button type="submit" className="button">{t('Sign Up')}</button>
             </div>
@@ -202,16 +280,16 @@ const Signup = () => {
       <label htmlFor="password" className="label">
         New Password
       </label>
-      <input id="password" type="password" className="input" onChange={(e) => setPassword(e.target.value)} />
+      <input id="password" type="password" className="input" onChange={(e) => setPassword2(e.target.value)} />
     </div>
     <div className="group">
       <label htmlFor="confirm-password" className="label">
         Confirm Password
       </label>
-      <input id="confirm-password" type="password" className="input" onChange={(e) => setConfirmPassword(e.target.value)} />
+      <input id="confirm-password" type="password" className="input" onChange={(e) => setConfirmPassword2(e.target.value)} />
     </div>
     <div className="group">
-      <button type="submit" className="button">
+      <button type="submit" className="button" onClick={handleResetPassword}>
         Reset Password
       </button>
     </div>
