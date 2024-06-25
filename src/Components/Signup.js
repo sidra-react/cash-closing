@@ -27,7 +27,7 @@ const [success, setSuccess] = useState(false);
   const [password, setPassword] = useState('');
   const [tab, setTab] = useState("sign-up"); // Default tab
   const [code, setCode] = useState(''); // 4-digit code
-    const [flag, setflag] = useState('false'); // 4-digit code
+    const [flag, setflag] = useState(); // 4-digit code
 
   const [confirmationSent, setConfirmationSent] = useState(false);
   const [codeValue, setCodeValue] = useState('');
@@ -45,10 +45,10 @@ const handleConfirmEmail = async (e) => {
     const { success, message, error } = response.data;
     if (success) {
       if (message === 'Email found') {
-        setflag(true)
+        setflag(message)
   
       } else {
-      
+     setflag('Email not found')
         console.log('Email not found');
       }
     } else {
@@ -57,15 +57,7 @@ const handleConfirmEmail = async (e) => {
   } catch (error) {
     console.error(error);
   }
-if(flag===true){
-alert("Email found")
-   setflag(false)
 
-      setTab("reset-password")
-}
-else{
-  alert("Email not found")
-}
   // const code = Math.floor(Math.random() * 9000) + 1000;
 
   // const emaill = 'sidra.noor.2802002@gmail.com'; // Assuming 'email' is the user's email address
@@ -156,8 +148,8 @@ const handleResetPassword = async () => {
           
           <div className=" signbox">
              <img src={logo} className="heading-image" /> 
-       <h1>&nbsp;&nbsp;&nbsp;&nbsp;Welcome Back!</h1>
-      <p>&nbsp;&nbsp;Welcome back, please enter your details.</p>
+       <h1>&nbsp;&nbsp;&nbsp;&nbsp;{t('Welcome Back!')}</h1>
+      <p>&nbsp;&nbsp;{t('Welcome back, please enter your details.')}</p>
         <button className="bbutton">
    
   <FcGoogle /> &nbsp;&nbsp;Register with Google
@@ -255,8 +247,8 @@ const handleResetPassword = async () => {
           </div>
           ) : tab === "forgot-password" ? (
   <div className="form-content">
-    <h2>Forgot Password</h2>
-    <p>Enter the email address you used when joined and we’ll send reset instructions to reset your password.</p>
+    <h2>{t('Forgot Password')}</h2>
+    <p>{t('Enter the email address you used when joined and we’ll send reset instructions to reset your password.')}</p>
     <div className="group">
       <label htmlFor="email" className="label">
         Email

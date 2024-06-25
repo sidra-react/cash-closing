@@ -10,7 +10,11 @@
       "Sign Up":"Inscrever-se",
        "Already a member?":"já é um membro?",
            "WelcometoSaveNum":"Bem-vindo ao SaveNum",
-    "Registernowandstartyouradventure":"Registre-se agora e comece sua aventura."
+    "Registernowandstartyouradventure":"Registre-se agora e comece sua aventura.",
+     "Welcome Back!":"Bem vindo de volta!",
+     "Welcome back, please enter your details.":"Bem-vindo de volta, por favor insira seus dados.",
+"Forgot Password":"Esqueceu sua senha",
+"Enter the email address you used when joined and we’ll send reset instructions to reset your password.":"Digite o endereço de e-mail que você usou quando ingressou e enviaremos instruções de redefinição para redefinir sua senha."
 
     
 }

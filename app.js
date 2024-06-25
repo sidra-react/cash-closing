@@ -1,6 +1,7 @@
 //server.js
 const bcrypt = require('bcrypt');
 const express = require("express");
+const path=require("path")
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const mongoose = require('./mongo');
@@ -11,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 const Mailjet = require('node-mailjet');
 
-
+require('dotenv').config()
 const sendEmail = async (to, pin) => {
   try {
     const validatedTo = validateInput(to);
@@ -108,7 +109,6 @@ app.post("/sig", async (req, res) => {
         const user = await User.findOne({ $or: [{ username: username }, { email: email }] });
        
         if (user) {
-          // Compare password using user.password field (ensure you hash passwords before saving)
           if (user.password === password) {
             res.json("exist"); 
           } else {
@@ -128,6 +128,10 @@ app.post("/sig", async (req, res) => {
     console.error(error);
     return res.status(500).json("fail");
   }
+});
+app.get("/",(req,res)=>{
+  app.use(express.static(path.resolve(__dirname,"build")));
+  res.sendFile(path.resolve(__dirname,"build","index.html"));
 });
 app.post('/check-email', async (req, res) => {
   const { email } = req.body;
@@ -167,6 +171,6 @@ await User.updateOne({ _id: user._id }, { password: password2 });
 });
 
 
-app.listen(8000, () => {
+app.listen(process.env.PORT, () => {
     console.log("Server listening on port 8000");
 });

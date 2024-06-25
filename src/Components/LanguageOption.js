@@ -4,6 +4,7 @@ const LanguageOption = ({ onChange }) => {
   position: 'absolute',
   bottom: 0 ,
   left:0,
+  top:0,
   marginTop: '50px'
 }}>
   <select onChange={onChange}>

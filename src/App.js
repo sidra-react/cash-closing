@@ -4,6 +4,7 @@ import i18next from 'i18next';
 import LanguageOption from './Components/LanguageOption';
 import Aboutus from './Pages/Aboutus';
 import Navbaroutflow from './Components/Navbaroutflow';
+import Signup from './Components/Signup';
 import { BrowserRouter as Router } from 'react-router-dom';
 function App() {
   const { t } = useTranslation();
@@ -16,7 +17,8 @@ function App() {
     <div>
      <Router>
        <LanguageOption onChange={handleChangeLanguage} />
-<Aboutus/>
+       <Signup/>
+
 
          </Router>
 
